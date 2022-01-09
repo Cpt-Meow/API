@@ -24,7 +24,7 @@ if status == 'Job is NOT ready':
     response2_json = response2.json()
     status = response2_json['status']
 
-    if status == 'Job is ready':
+    if status == 'Job is ready' and response2_json['result'] is not None:
         print('Задача готова')
     else:
         print('Задача не готова')
