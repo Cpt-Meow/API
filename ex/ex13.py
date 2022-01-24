@@ -1,7 +1,3 @@
-# Доступы к предустановленному пользователю:
-# 'email': 'vinkotov@example.com',
-# 'password': '1234'
-#
 import pytest
 import requests
 
