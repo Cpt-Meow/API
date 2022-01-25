@@ -61,3 +61,4 @@ class BaseCase:
     def get_random_username(self, maxlen):
         symbol = string.ascii_letters
         return "".join([random.choice(symbol) for i in range(random.randrange(maxlen))])
+
