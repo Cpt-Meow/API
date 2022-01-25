@@ -63,10 +63,3 @@ class TestUserAuth(BaseCase):
             0,
             f"User is authorized with condition {condition}"
         )
-
-# RUN  python -m pytest --alluredir=test_results/ tests/
-# generation > allure serve test_results/
-
-# set ENV=prod
-# echo %ENV%
-# python -m pytest tests/
