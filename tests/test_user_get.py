@@ -4,8 +4,10 @@ from lib_project.base_case import BaseCase
 from lib_project.assertions import Assertions
 
 
+@allure.epic("GET cases")
 class TestUserGet(BaseCase):
 
+    @allure.description("trying to get user data when the user is not logged in.")
     def test_user_details_not_auth(self):
 
         resp = MyRequests.get('/user/2')
@@ -15,6 +17,7 @@ class TestUserGet(BaseCase):
         Assertions.assert_json_has_no_key(resp, 'firstName')
         Assertions.assert_json_has_no_key(resp, 'lastName')
 
+    @allure.description("get the data of the authorized user")
     def test_user_details_auth_as_same_user(self):
 
         data = {
@@ -36,6 +39,7 @@ class TestUserGet(BaseCase):
 
         Assertions.assert_json_has_keys(resp2, expected_fields)
 
+    @allure.description("trying to get user data when logging in as another user")
     def test_other_users_data(self):
         # 1
         data = {
